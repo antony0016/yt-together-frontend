@@ -31,12 +31,15 @@
 <script setup lang="ts">
 import router from "./router";
 import usePlayerController from "./store/PlayerController";
-import { computed, toRefs } from "vue";
+import { computed, onMounted, toRefs } from "vue";
 
 const playerController = usePlayerController();
 
 const { user } = toRefs(playerController)
 
+onMounted(() => {
+  console.log(import.meta.env.VITE_YT_ACCESS_TOKEN)
+})
 
 const together = function () {
 
